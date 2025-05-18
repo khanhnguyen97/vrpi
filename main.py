@@ -133,7 +133,7 @@ def show():
         if not content.strip():
             return "No Data"
 
-        cleaned_content = clean_text(content)
+        cleaned_content = clean_text(content).replace('\n', '').replace('\r', '')
 
         # Ưu tiên: nếu có Status, Speed, Solutions, Ignored thì gộp 1 dòng
         latest_status = latest_speed = latest_solutions = latest_ignored = None
