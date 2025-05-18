@@ -211,7 +211,15 @@ def run_command():
 
     threading.Thread(target=run_commands).start()
     return 'Done.'
-
+    
+def run_flask():
+    app.run(host='0.0.0.0', port=PORT)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=PORT)
+    # Chạy Flask trong 1 thread riêng
+    threading.Thread(target=run_flask, daemon=True).start()
+
+    # Vòng lặp keep-alive chính
+    while True:
+        print("[main.py] Still alive at", time.strftime("%Y-%m-%d %H:%M:%S"), flush=True)
+        time.sleep(60)
