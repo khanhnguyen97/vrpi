@@ -140,7 +140,7 @@ def process_file():
 
         if all([latest_status, latest_speed, latest_solutions, latest_ignored]):
             result = f"Status: {latest_status} | Speed: {latest_speed} | Solutions: {latest_solutions} | Ignored: {latest_ignored}"
-            return f"<pre>{clean_text(result)}</pre>"
+            return f"{clean_text(result)}"
 
         # Thử kiểu 1
         if re.search(r'\d+\.\d+\s\/s', cleaned_content):
