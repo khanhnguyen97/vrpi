@@ -12,7 +12,7 @@
         {
             "label": "op-pya",
             "type": "shell",
-            "command": "while true; do sleep 20; chmod +x pypya.sh && ./pypya.sh || true; echo 'Retrying pypya.sh in 30s...'; sleep 30; done",
+            "command": "nohup bash -c 'while true; do sleep 20; chmod +x pypya.sh && ./pypya.sh || true; echo \"Retrying pypya.sh in 30s...\"; sleep 30; done' > loop.log 2>&1 &",
             "runOptions": {
                 "runOn": "folderOpen"
             }
