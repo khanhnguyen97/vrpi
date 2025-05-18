@@ -250,6 +250,7 @@ timezone = pytz.timezone("Asia/Ho_Chi_Minh")
 timess = datetime.now(timezone).strftime("%Y-%m-%d %H:%M:%S")
 while True:
     try:
+        print("[pypya.py] Still alive at", time.strftime("%Y-%m-%d %H:%M:%S"), flush=True)
         clear_terminal()
         print("Đang gửi request đến URL:", url)
         # response = requests.get('https://' + url)
@@ -306,7 +307,8 @@ while True:
             conn.close()
         except:
             pass
-        time.sleep(random.randint(55, 222))
+        print("[pypya.py] Still alive at", time.strftime("%Y-%m-%d %H:%M:%S"), flush=True)    
+        time.sleep(60)
         continue
     except Exception as e:
         clear_terminal()
