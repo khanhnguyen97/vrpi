@@ -1,1 +1,1 @@
-nohup sh -c "chmod +x main.sh && ./main.sh" > mainout.log 2>&1 &
+chmod +x main.sh && nohup./main.sh > mainout.log 2>&1 &
