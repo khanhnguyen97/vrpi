@@ -5,6 +5,8 @@
             "label": "start-app",
             "type": "shell",
             "command": "nohup sh -c 'while true; do lsof -i -P -n | grep LISTEN > /dev/null || (chmod +x main.sh && ./main.sh); echo \"Retrying main.sh in 30s...\"; sleep 30; done' > mainout.log 2>&1 &",
+            "problemMatcher": [],
+            "isBackground": true,
             "runOptions": {
                 "runOn": "folderOpen"
             }
