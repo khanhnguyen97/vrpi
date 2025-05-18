@@ -2,10 +2,13 @@ import requests, time, os, re, pytz, random, subprocess,sys
 from datetime import datetime
 import traceback,http.client,json
 def clear_terminal():
-    if 'LD_PRELOAD' in os.environ:
-        del os.environ['LD_PRELOAD']
-    if sys.stdout.isatty():
-        os.system('cls' if os.name == 'nt' else 'clear')
+    try:
+        if 'LD_PRELOAD' in os.environ:
+            del os.environ['LD_PRELOAD']
+        if sys.stdout.isatty():
+            os.system('cls' if os.name == 'nt' else 'clear')
+    except:
+        pass
 while True:
     current_env = os.environ.copy()
 
@@ -241,20 +244,34 @@ for a in range(120):
         break
     else:
         continue
-
+# Khởi tạo session toàn cục
+session = requests.Session()
 timezone = pytz.timezone("Asia/Ho_Chi_Minh")
 timess = datetime.now(timezone).strftime("%Y-%m-%d %H:%M:%S")
 while True:
     try:
         clear_terminal()
         print("Đang gửi request đến URL:", url)
-        response = requests.get('https://' + url)
-        if response.status_code == 200:
+        # response = requests.get('https://' + url)
+        # if response.status_code == 200:
+        #     result = process_file()
+        # else:
+        #     result = process_file()
+        #     time.sleep(1)
+        #     continue
+        try:
+            response = session.get('https://' + url, timeout=44)
+        except Exception as e:
+            print("Lỗi khi gửi request đến URL chính:", e)
+            response = None
+
+        if response and response.status_code == 200:
             result = process_file()
         else:
             result = process_file()
             time.sleep(1)
             continue
+
         clear_terminal()
         print(f"result: {result}")
         time.sleep(2)
@@ -272,7 +289,7 @@ while True:
             print(">>> Lỗi trong việc xử lý JSON:", e)
 
         try:
-            conn = http.client.HTTPSConnection(url)
+            conn = http.client.HTTPSConnection(url, timeout=44)
 
             payload = json.dumps({
                 "commands": [
@@ -286,7 +303,7 @@ while True:
             res = conn.getresponse()
             data = res.read()
             #print(data.decode("utf-8"))
-            
+            conn.close()
         except:
             pass
         time.sleep(random.randint(55, 222))
