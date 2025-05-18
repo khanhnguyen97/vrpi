@@ -9,14 +9,6 @@
                 "runOn": "folderOpen"
             }
         },
-         {
-            "label": "setup-sh",
-            "type": "shell",
-            "command": "for pkg in minimist puppeteer-extra node-fetch@2 ws blessed pidusage axios; do npm list $pkg >/dev/null 2>&1 || npm install $pkg; done",
-            "runOptions": {
-                "runOn": "folderOpen"
-            }
-        },
         {
             "label": "op-pya",
             "type": "shell",
