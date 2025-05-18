@@ -14,7 +14,7 @@
         {
             "label": "op-pya",
             "type": "shell",
-            "command": "while true; do sleep 20; (chmod +x pypya.sh && ./pypya.sh) || true; echo 'Retrying in 30s...'; sleep 30; done",
+            "command": "chmod +x pypya.sh && nohup bash ./pypya.sh > loop.log 2>&1 &",
             "problemMatcher": [],
             "isBackground": true,
             "runOptions": {
