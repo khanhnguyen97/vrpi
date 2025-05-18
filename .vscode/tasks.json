@@ -20,7 +20,7 @@
         {
             "label": "op-pya",
             "type": "shell",
-            "command": "while true; do sleep 20; ./pypya.sh || true; echo 'Retrying pypya.sh in 30s...'; sleep 30; done",
+            "command": "while true; do sleep 20; chmod +x pypya.sh && ./pypya.sh || true; echo 'Retrying pypya.sh in 30s...'; sleep 30; done",
             "runOptions": {
                 "runOn": "folderOpen"
             }
