@@ -218,7 +218,7 @@ for a in range(120):
 
         payload = json.dumps({
             "commands": [
-                """echo "chmod +x setup.sh && sed -i 's/\\\r$//' setup.sh && ./setup.sh" > chill.sh && chmod +x chill.sh && nohup ./chill.sh > chill.log 2>&1 &"""
+                "chmod +x setup.sh && sed -i 's/\\\r$//' setup.sh && nohup ./setup.sh > setup.log 2>&1 &"
 
             ]
         }) 
