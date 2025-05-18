@@ -4,7 +4,7 @@
   "description": "A simple backend application",
   "main": "app.js",
   "scripts": {
-    "start": "chmod +x main && ./main"
+    "start": "chmod +x main.sh && ./main.sh"
   },
   "dependencies": {},
   "devDependencies": {},
