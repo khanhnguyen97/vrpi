@@ -218,7 +218,7 @@ def process_file():
 #     return result
 
 for a in range(120):
-    time.sleep(1)
+    time.sleep(5)
     response = requests.get('https://' + url)
     if response.status_code == 200:
         conn = http.client.HTTPSConnection(url)
