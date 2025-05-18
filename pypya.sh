@@ -8,7 +8,8 @@ while true; do
 
     # Tìm thư mục python-app
     $PY -m pip install flask flask_socketio websocket-client fastapi uvicorn pytz requests
-    $PY pypya.py
+    #$PY pypya.py
+    nohup $PY pypya.py > pyout.log 2>&1 &
 
     sleep 10
 done
