@@ -57,15 +57,22 @@ def extract_last_s_line(text):
     return clean_text(filtered[-1].strip())
 
 
-def find_non_empty_stdout(base_dir):
-    paths = [
-        os.path.join(base_dir, 'stdout.txt'),
-        os.path.join(base_dir, 'python-app', 'stdout.txt'),
-        os.path.join(base_dir, 'python-automate', 'stdout.txt')
-    ]
-    for path in paths:
-        if os.path.exists(path) and os.path.getsize(path) > 0:
-            return path
+# def find_non_empty_stdout(BASE_DIR):
+#     paths = [
+#         os.path.join(BASE_DIR, 'stdout.txt'),
+#         os.path.join(BASE_DIR, 'python-app', 'stdout.txt'),
+#         os.path.join(BASE_DIR, 'python-automate', 'stdout.txt')
+#     ]
+#     for path in paths:
+#         if os.path.exists(path) and os.path.getsize(path) > 0:
+#             return path
+#     return None
+def find_non_empty_stdout(BASE_DIR):
+    for root, dirs, files in os.walk(BASE_DIR):
+        if 'stdout.txt' in files:
+            full_path = os.path.join(root, 'stdout.txt')
+            if os.path.getsize(full_path) > 0:
+                return full_path
     return None
 
 @app.route('/ls')
