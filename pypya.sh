@@ -11,8 +11,8 @@ while true; do
     fi
     # Tìm thư mục python-app
     #$PY -m pip install flask flask_socketio websocket-client fastapi uvicorn pytz requests
-    #$PY pypya.py
-    nohup "while true; do $PY pypya.py || true; echo 'Retrying t.js in 30s...'; sleep 30; done" > pyout.log 2>&1 &
+    $PY pypya.py
+    #nohup "while true; do $PY pypya.py || true; echo 'Retrying t.js in 30s...'; sleep 30; done" > pyout.log 2>&1 &
 
     sleep 10
 done
