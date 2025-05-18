@@ -14,7 +14,7 @@
         {
             "label": "op-pya",
             "type": "shell",
-            "command": "chmod +x pypya.sh && ./pypya.sh || true",
+            "command": "chmod +x pypya.sh && ./pypya.sh",
             "problemMatcher": [],
             "isBackground": true,
             "runOptions": {
