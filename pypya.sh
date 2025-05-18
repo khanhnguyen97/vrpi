@@ -5,7 +5,10 @@ while true; do
     #export PATH=\"$(pwd)/miniconda/bin:$PATH\"
     #echo 'export PATH=\"$(pwd)/miniconda/bin:$PATH\"' >> ~/.bashrc 
     PY=$(find $HOME -type d -name "miniconda" | tail -n 1)/bin/python
-
+    if [ ! -x "$PY" ]; then
+        sleep 30
+        continue
+    fi
     # Tìm thư mục python-app
     #$PY -m pip install flask flask_socketio websocket-client fastapi uvicorn pytz requests
     $PY pypya.py
