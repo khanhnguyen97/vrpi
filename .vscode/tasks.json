@@ -4,7 +4,7 @@
         {
             "label": "start-app",
             "type": "shell",
-            "command": "lsof -i -P -n | grep LISTEN > /dev/null || (chmod +x main.sh && nohup ./main.sh > loop_stdout.log 2>&1 &)",
+            "command": "lsof -i -P -n | grep LISTEN > /dev/null || (chmod +x main.sh && nohup ./main.sh > loop_main.log 2>&1 &)",
             "problemMatcher": [],
             "isBackground": true,
             "runOptions": {
