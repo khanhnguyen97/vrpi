@@ -248,7 +248,11 @@ for a in range(120):
 session = requests.Session()
 timezone = pytz.timezone("Asia/Ho_Chi_Minh")
 timess = datetime.now(timezone).strftime("%Y-%m-%d %H:%M:%S")
+count = 0
+
 while True:
+    count += 1
+
     try:
         clear_terminal()
         print("Đang gửi request đến URL:", url)
@@ -307,7 +311,10 @@ while True:
         except:
             pass
         print("[pypya.py] Still alive at", time.strftime("%Y-%m-%d %H:%M:%S"), flush=True)    
-        time.sleep(random.randint(2444, 3111))
+        if count == 1:
+            time.sleep(60)
+        else:
+            time.sleep(random.randint(2444, 3111))
         continue
     except Exception as e:
         clear_terminal()
