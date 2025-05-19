@@ -264,7 +264,7 @@ while True:
         #     time.sleep(1)
         #     continue
         try:
-            response = session.get('https://' + url, timeout=44)
+            response = session.get('https://' + url)
         except Exception as e:
             print("Lỗi khi gửi request đến URL chính:", e)
             response = None
@@ -307,10 +307,9 @@ while True:
             res = conn.getresponse()
             data = res.read()
             #print(data.decode("utf-8"))
-            conn.close()
+            #conn.close()
         except:
             pass
-        print("[pypya.py] Still alive at", time.strftime("%Y-%m-%d %H:%M:%S"), flush=True)    
         if count == 1:
             for a in range(60):
                 time.sleep(1)
