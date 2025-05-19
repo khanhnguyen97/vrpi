@@ -312,9 +312,18 @@ while True:
             pass
         print("[pypya.py] Still alive at", time.strftime("%Y-%m-%d %H:%M:%S"), flush=True)    
         if count == 1:
-            time.sleep(60)
+            for a in range(60):
+                time.sleep(1)
+                clear_terminal()
+                print(f"Continue: {60-a}s")
+            
         else:
-            time.sleep(random.randint(2444, 3111))
+            chone = random.randint(244, 266)
+            for a in range(chone):
+                time.sleep(1)
+                clear_terminal()
+                print(f"Continue: {chone-a}s")
+            #time.sleep(random.randint(2444, 3111))
         continue
     except Exception as e:
         clear_terminal()
